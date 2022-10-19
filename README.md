@@ -5,7 +5,7 @@
 
 #### Notes :
 * Numéro de la boîte à bec : 4
-* Adresse I2C possibles pour le BMP280 :
+* Adresse I2C possibles pour le BMP280 : Connexion de CSB sur VDDIO L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Pour notre part, on choisira "1110111".
 * Le registre et la valeur permettant d'identifier le composant :
 * Le registre et la valeur permettant de mettre le composant en mode normal :
 * Les registres contenant l'étalonage du composant

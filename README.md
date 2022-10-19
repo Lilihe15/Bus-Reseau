@@ -9,6 +9,18 @@
 
 ![img](Communication_I2C.png)
 
+Les timings de communication en I2C avec le capteur sont présentés dans le chronogramme suivant
+
+![img](Communication_I2C_diagram.png)
+
+Enrichi par les valeurs suivantes
+
+![img](Communication_I2C_timings.png)
+
+Il faut songer à ajouter à ces valeurs :
+** 100 ns entre SDK et SDI (dans ce sens) en entrées dans les modes "standard" et "rapid", et seulement 20 ns dans le mode "high-speed";
+** 140 ns entre SDK et SDI (dans ce sens) en sorties dans les modes "standard" et "rapid", et seulement 70 ns dans le mode "high-speed".
+
 * Le registre et la valeur permettant d'identifier le composant :
 * Le registre et la valeur permettant de mettre le composant en mode normal :
 * Les registres contenant l'étalonage du composant

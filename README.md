@@ -21,6 +21,12 @@ Il faut songer à ajouter à ces valeurs :
 ** 100 ns entre SDK et SDI (dans ce sens) en entrées dans les modes "standard" et "rapid", et seulement 20 ns dans le mode "high-speed";
 ** 140 ns entre SDK et SDI (dans ce sens) en sorties dans les modes "standard" et "rapid", et seulement 70 ns dans le mode "high-speed".
 
+Le pin-out du capteur est décrit ci-après :
+
+![img](Communication_I2C_connexion.png)
+
+![img](Communication_I2C_connexion_tab.png)
+
 * Le registre et la valeur permettant d'identifier le composant :
 * Le registre et la valeur permettant de mettre le composant en mode normal :
 * Les registres contenant l'étalonage du composant

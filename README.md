@@ -6,6 +6,9 @@
 #### Notes :
 * Numéro de la boîte à bec : 4
 * Adresse I2C possibles pour le BMP280 : Connexion de CSB sur VDDIO L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Il ne faut pas laisseer le pin SDO, sinon l'adresse restera indéfinie. Le CSB doit être connecté à VDDIO pour selectionner la communication en I2C. GND doit être connecté à VDDIO via une résistance de pull-up externe. Pour utiliser le mode lecture (-> 111011x1), il faut d'abord générer un "start" ou un "stop" en mode écriture (-> 111011x1)
+
+![img](Communication_I2C.png)
+
 * Le registre et la valeur permettant d'identifier le composant :
 * Le registre et la valeur permettant de mettre le composant en mode normal :
 * Les registres contenant l'étalonage du composant

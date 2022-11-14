@@ -36,3 +36,9 @@ Le pin-out du capteur est décrit ci-après :
 
 
 ### Séance 2 :
+
+### Séance 3 :
+
+### Séance 4 :
+Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication de 500 kbits/s
+Les broches PB8 et PB9 sont de la carte Nucleo sont configurées en CAN_Rx et CAN_Tx respectivement.

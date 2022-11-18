@@ -29,11 +29,11 @@ Le pin-out du capteur est décrit ci-après :
 
 * Le registre 0xD0 permet l'identification du composant, ici, 0x58.
 * Le bit de contrôle 0xF4 permet la selection du mode de fonctionnement, ses deux bits de poids le plus faible "Mode[1:0]" doivent être placés à 0b11.
-#### PAUSE ICI
-* Les registres contenant l'étalonage du composant
-* Les registres contenant la valeur de température (et le format)
-* Les registres contenant la valeur de pression (et le format)
-* Les fonctions permettant le calcul de la température et de la pression compenssée, en entier sur 32 bits : On peut trouver les formules de compensation à la fin de la documentation du capteur BMP280.
+* Les 6 bits de poids fort du registre 0xF4 (respectivement 7, 6, 5, et 4, 3, 2) servent respectivement à régler l'* oversampling * sur les mesures de pression et de température. En fonction de ces réglages, les valeurs de pression et de température sont inscrites sur 16 à 20 bits.
+* Les registres 0xFA à 0xFC contenant la valeur de température. Plus précisement, ce sont les registres 0xFA et 0xFB, voire les 4 bits de poids fort du registre 0xFC, selon la taille (16 à 20 bits selon le réglage) de la mesure de température.
+* Les registres 0xF7 à 0xF9 contenant la valeur de pression. Plus précisement, ce sont les registres 0xF7 et 0xF8, voire les 4 bits de poids fort du registre 0xF9, selon la taille (16 à 20 bits selon le réglage) de la mesure de pression.
+* Les fonctions permettant le calcul de la température et de la pression compenssée, en entier sur 32 bits :
+$data_{filtered} = \frac{data_{filtered_old}*(K_{filter} - 1) + data_{ADC}}{K_{filter}}$
 
 
 ### Séance 2 :

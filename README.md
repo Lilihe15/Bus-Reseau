@@ -4,8 +4,8 @@
 ### Séance 1 :
 
 #### Notes :
-* Numéro de la boîte à bec : 4
-* Adresse I2C possibles pour le BMP280 : Connexion de CSB sur VDDIO L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Il ne faut pas laisseer le pin SDO, sinon l'adresse restera indéfinie. Le CSB doit être connecté à VDDIO pour selectionner la communication en I2C. GND doit être connecté à VDDIO via une résistance de pull-up externe. Pour utiliser le mode lecture (-> 111011x1), il faut d'abord générer un "start" ou un "stop" en mode écriture (-> 111011x1)
+* Adresse I2C possibles pour le BMP280 :
+L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Il ne faut pas laisser tel quel le pin SDO, sinon l'adresse restera indéfinie. Le CSB doit être connecté à VDDIO pour selectionner la communication en I2C. GND doit être connecté à VDDIO via une résistance de pull-up externe. Pour utiliser le mode lecture (-> 111011x1), il faut d'abord générer un "start" ou un "stop" en mode écriture (-> 111011x1)
 
 ![img](Communication_I2C.png)
 
@@ -27,8 +27,9 @@ Le pin-out du capteur est décrit ci-après :
 
 ![img](Communication_I2C_connexion_tab.png)
 
-* Le registre et la valeur permettant d'identifier le composant :
-* Le registre et la valeur permettant de mettre le composant en mode normal :
+* Le registre 0xD0 permet l'identification du composant, ici, 0x58.
+* Le bit de contrôle 0xF4 permet la selection du mode de fonctionnement, ses deux bits de poids le plus faible "Mode[1:0]" doivent être placés à 0b11.
+#### PAUSE ICI
 * Les registres contenant l'étalonage du composant
 * Les registres contenant la valeur de température (et le format)
 * Les registres contenant la valeur de pression (et le format)
@@ -43,4 +44,4 @@ Le pin-out du capteur est décrit ci-après :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.
 Les broches PB8 et PB9 sont de la carte Nucleo sont configurées en CAN_Rx et CAN_Tx respectivement.
 
-Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitialiser la carte de commande.
+Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitialiser la carte de commande car elle ne fonctionnait plus.

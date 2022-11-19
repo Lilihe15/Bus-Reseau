@@ -78,6 +78,13 @@ On peu ajouter d'autres commandes à lancer dans des sous-repertoires afin de v�
 
 Le serveur semble bien fonctionner.
 
+* Décorateur *@app.route*
+
+*@app.route* est un décorateur de fonction Python, c'est ce qui permet de modifier le comportement d'une autre fonction. Ainsi, ce décorateur indique que les requêtes qui pointent vers l'url "/api/welcome/" devront obtenir comme réponse un appel de la fonction *api_welcome()*. Celle-ci nous renvoie la chaîne de caractère "Hello World!"
+
+* Fragment *<int:index>*
+
+Ce fragment servira à selectionner un numéro de caractère dans la chaîne welcome. Plus particulièrement, lorsqu'on écrit un chiffre supérieur au nombre de lettres de *welcome*, une erreur python s'affichera alors: *\__\_ERROR\_\_*.
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

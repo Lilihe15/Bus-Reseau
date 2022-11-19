@@ -49,6 +49,8 @@ En reprennant le code des fonctions fournies pour l'acquisition de mesures de pr
 
 On commence par télécharger le système d'exploitation "Raspberry Pi OS (32-bit) Lite" sur le carte SD à insérer dans la carte Raspberry Pi, *via* le logiciel Balena etcher. On rajoute ensuite dans la partition boot de la carte les fichiers "ssh" (vide) et "wpa_supplicant.conf" avec le contenu fourni. C'est dans ce dernier que l'on décrit notre identifiant utilisateur, ainsi que notre mot de passe. On active ensuite la connexion au GPIO et on le libère l'UART du noyau pour pouvoir s'en servir sans problème. Il nous reste plus qu'à se connecter à notre carte depuis notre ordinateur *via* le logiciel Putty.
 
+![img](Source_images)
+
 Le port série du Raspberry est testé en bouclage sur lui-même avec le logiciel minicom.
 
 En ajoutant une ligne à la redéfinition de la fonction *fputc*, on peut faire en sorte que le *printf* envoie les informations à afficher vers les deux ports séries :

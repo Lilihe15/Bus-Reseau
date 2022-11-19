@@ -39,7 +39,7 @@ Le pin-out du capteur est décrit ci-après :
 
 ![img](Communication_I2C_connexion_tab.png)
 
-Les premiers bus dont nous auront besoin sont le bus $ I_2C $ et le bus UART (on USB). Les broches PB8 et PB9 seront ici réservées pour la communication en $I_2C$ avec le capteur BMP280, les brocches xxx et xxx, pour la liaison UAR nous permettant d'observer les résultats attendus.
+Les premiers bus dont nous auront besoin sont le bus $I_2C$ et le bus UART (on USB). Les broches PB8 et PB9 seront ici réservées pour la communication en $I_2C$ avec le capteur BMP280 (Elles seront remplacées plus tard par les broches PB6 et PB7, pour laisser la place au CAN), les broches PA2 et PA3, pour la liaison UART nous permettant d'observer les résultats attendus.
 
 
 ### Séance 2 :

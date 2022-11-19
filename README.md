@@ -112,7 +112,7 @@ Encore une fois, le retour du serveur se fait bien sous le format JSON.
 
 #### Error 404
 
-
+On ajoute maintenant le error handler dans le fichier [hello.py](hello.py) qui va gérer les erreurs 404.
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

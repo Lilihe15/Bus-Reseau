@@ -104,11 +104,15 @@ Le résultat est conforme :
 
 ##### Méthode 2
 
-Onn peut aussi utiliser la foncvtion *jsonify()*, qui transforme le résultat directement sous le format adéquate, comme ci-après :
+On peut aussi utiliser la foncvtion *jsonify()*, qui transforme le résultat directement sous le format adéquate, comme ci-après :
 
 <p align="center"><img src="Sources_images/json_2.png" width="600"></p>
 
 Encore une fois, le retour du serveur se fait bien sous le format JSON.
+
+#### Error 404
+
+
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

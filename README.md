@@ -115,7 +115,9 @@ Encore une fois, le retour du serveur se fait bien sous le format JSON.
 On ajoute maintenant le error handler dans le fichier [hello.py](hello.py) qui va gérer les erreurs 404.
 
 ### Séance 4 :
-Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.
-Les broches PB8 et PB9 sont de la carte Nucleo sont configurées en CAN_Rx et CAN_Tx respectivement.
+
+L'objectif va maintenant être de faire tourner un moteur pas à pas. Comme expliqué dans la première section, nous utiliserons les broches PB8 et PB9 du STM32 pour cela.
+
+Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s lors de l'initialisation du périphérique dans la perspective ioc. Les broches PB8 et PB9 sont de la carte Nucleo sont configurées en CAN_Rx et CAN_Tx respectivement.
 
 Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitialiser la carte de commande car elle ne fonctionnait plus.

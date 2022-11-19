@@ -43,7 +43,7 @@ Les premiers bus dont nous auront besoin sont le bus $I_2C$ et le bus UART (on U
 
 En modifiant la fonction appelée par *printf*, on peut rediriger le retour des informations *via* l'appel de cette fonction vers la console, grâce à l'USART on USB. Tout se passe, d'apparence, comme si la carte Nucleo avait pour sortie standard l'écran du PC.
 
-En reprennant le code des fonctions fournies pour l'acquisition de mesures de pression et de température, et en y ajoutant les formules de compensation inclues dans la documentation du capteur, on obtient le code visible dans BMP280.c /.h.
+En reprennant le code des fonctions fournies pour l'acquisition de mesures de pression et de température, et en y ajoutant les formules de compensation inclues dans la documentation du capteur, on obtient le code visible dans [BMP280_driver](BMP280_driver).
 
 ### Séance 2 :
 

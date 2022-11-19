@@ -60,17 +60,24 @@ On forme ensuite une version simplifiée de shell pour la carte STM32, placée d
 
 ### Séance 3 :
 
+#### Création du serveur sous Python
+
 Afin de pouvoir envoyer des requêtes depuis python, on installe *Python3* ainsi que la bibliothèque *pyserial* et *flask* sur la carte Raspberry.
 
-On créé le fichier hello.py, qui sera à la base de l'arborescence du serveur. On lance celui-ci avec la commande *flask run* et on observe le retour de l'execution de ce script avec la commande *curl*, comme sur les figures Ci-dessous.
+On créé le fichier hello.py, qui sera à la base de l'arborescence du serveur. On lance celui-ci avec la commande *flask run* et on observe le retour de l'execution de ce script avec la commande *curl*, comme sur les figures ci-dessous.
 
 <p align="center"><img src="Sources_images/serveur_flask_1.png" width="1000"></p>
 
-Pour étendre la fonctionnement du serveur hors de la loopback, on applique la commande flask run en modifiant le flag *FLASK_ENV* ("FLASK_ENV=development").
+Pour étendre le fonctionnement du serveur hors de la loopback, on applique la commande flask run en modifiant le flag *FLASK_ENV* ("FLASK_ENV=development").
+
+#### Interface REST
+
+On peu ajouter d'autres commandes à lancer dans des sous-repertoires afin de vérifier le bon fonctionnement du serveur, comme dans la route "/api/welcome/" avec un message de bienvenue, le résultat est visible ci après.
 
 <p align="center"><img src="Sources_images/serveur_flask_via_navigateur.png" width="500"></p>
 
 Le serveur semble bien fonctionner.
+
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

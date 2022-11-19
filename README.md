@@ -88,6 +88,20 @@ Le serveur semble bien fonctionner.
 
 Ce fragment servira à selectionner un numéro de caractère dans la chaîne welcome. Plus particulièrement, lorsqu'on écrit un chiffre supérieur au nombre de lettres de *welcome*, une erreur python s'affichera alors: *\__\_ERROR\_\_*.
 
+Nous souhaiterions que le retour du serveur se fasse sous le format JSON. Tout d'abord, nous utiliserons la methode *json.dumps()*. Problème, à l'observation de l'entête *Content-Type*, le résultat n'est pas sous le bon format.
+
+On explore deux méthodes pour que le format soit bien du JSON.
+
+##### Méthode 1
+
+On peut simplement rajouter un argument à la méthode *json.dumps()* : *{"Content-Type": "application/json"}*.
+
+<p align="center"><img src="Sources_images/json_1.png" width="500"></p>
+
+##### Méthode 2
+
+<p align="center"><img src="Sources_images/json_2.png" width="500"></p>
+
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.
 Les broches PB8 et PB9 sont de la carte Nucleo sont configurées en CAN_Rx et CAN_Tx respectivement.

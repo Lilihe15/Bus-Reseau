@@ -64,7 +64,13 @@ Afin de pouvoir envoyer des requêtes depuis python, on installe *Python3* ainsi
 
 On créé le fichier hello.py, qui sera à la base de l'arborescence du serveur. On lance celui-ci avec la commande *flask run* et on observe le retour de l'execution de ce script avec la commande *curl*, comme sur les figures Ci-dessous.
 
-<p align="center"><img src="Sources_images/serveur_flask_1.png" width=1000></p>
+<p align="center"><img src="Sources_images/serveur_flask_1.png" width="1000"></p>
+
+Pour étendre la fonctionnement du serveur hors de la loopback, on applique la commande flask run en modifiant le flag *FLASK_ENV* ("FLASK_ENV=development").
+
+<p align="center"><img src="Sources_images/serveur_flask_via_navigateur.png" width="500"></p>
+
+Le serveur semble bien fonctionner.
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

@@ -52,8 +52,9 @@ On commence par télécharger le système d'exploitation "Raspberry Pi OS (32-bi
 Le port série du Raspberry est testé en bouclage sur lui-même avec le logiciel minicom.
 
 En ajoutant une ligne à la redéfinition de la fonction *fputc*, on peut faire en sorte que le *printf* envoie les informations à afficher vers les deux ports séries :
-*HAL_UART_Transmit(&huartX, (uint8_t \*)&ch, 1, 0xFFFF);*
-Avec *X* le numéro de l'UART employé.
+*HAL_UART_Transmit(&huart5, (uint8_t \*)&ch, 1, 0xFFFF);*
+
+On forme ensuite une version simplifiée de shell pour la carte STM32, dont le code est visible [ici](stm32f4xx_it_partiel.c), afin que le Raspberry puisse lui envoyer des requêtes concernant la mesure de pression et de température.
 
 ### Séance 3 :
 

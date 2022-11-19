@@ -14,7 +14,7 @@ Les timings de communication en $I_2C$ avec le capteur sont présentés dans le 
 
 Enrichi par les valeurs suivantes
 
-<p align="center"><img src="Communication_I2C_timings.png" width="500"></p>
+<p align="center"><img src="Communication_I2C_timings.png" width="600"></p>
 
 Il faut songer à ajouter à ces valeurs :
 * 100 ns entre SDK et SDI (dans ce sens) en entrées dans les modes "standard" et "rapid", et seulement 20 ns dans le mode "high-speed";

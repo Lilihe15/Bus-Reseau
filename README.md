@@ -17,6 +17,7 @@ Enrichi par les valeurs suivantes
 ![img](Communication_I2C_timings.png)
 
 Il faut songer à ajouter à ces valeurs :
+
   * 100 ns entre SDK et SDI (dans ce sens) en entrées dans les modes "standard" et "rapid", et seulement 20 ns dans le mode "high-speed";
   * 140 ns entre SDK et SDI (dans ce sens) en sorties dans les modes "standard" et "rapid", et seulement 70 ns dans le mode "high-speed".
 

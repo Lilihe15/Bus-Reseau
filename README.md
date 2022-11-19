@@ -31,7 +31,7 @@ Les registres 0xFA à 0xFC contenant la valeur de température. Plus précisemen
 Les registres 0xF7 à 0xF9 contenant la valeur de pression. Plus précisement, ce sont les registres 0xF7 et 0xF8, voire les 4 bits de poids fort du registre 0xF9, selon la taille (16 à 20 bits selon le réglage) de la mesure de pression.
 
 Les fonctions permettant le calcul de la température et de la pression compenssée, en entier sur 32 bits :
-$$data_{filtered} = \frac{data_{filtered, old}*(K_{filter} - 1) + data_{ADC}}{K_{filter}}$$
+$$data_{filtered} = \frac{data_{filtered, old}(K_{filter} - 1) + data_{ADC}}{K_{filter}}$$
 
 Le pin-out du capteur est décrit ci-après :
 
@@ -41,8 +41,13 @@ Le pin-out du capteur est décrit ci-après :
 
 Les premiers bus dont nous auront besoin sont le bus $I_2C$ et le bus UART (on USB). Les broches PB8 et PB9 seront ici réservées pour la communication en $I_2C$ avec le capteur BMP280 (Elles seront remplacées plus tard par les broches PB6 et PB7, pour laisser la place au CAN), les broches PA2 et PA3, pour la liaison UART nous permettant d'observer les résultats attendus.
 
+En modifiant la fonction appelée par *printf*, on peut rediriger le retour des informations *via* l'appel de cette fonction vers la console, grâce à l'USART on USB. Tout se passe, d'apparence, comme si la carte Nucleo avait pour sortie standard l'écran du PC.
+
+En reprennant le code des fonctions fournies pour l'acquisition de mesures de pression et de température, et en y ajoutant les formules de compensation inclues dans la documentation du capteur, on obtient le code visible dans BMP280.c /.h.
 
 ### Séance 2 :
+
+On commence par télécharger le système d'exploitation "Raspberry Pi OS (32-bit) Lite" sur le carte SD à insérer dans la carte Raspberry Pi, *via* le logiciel Balena etcher. On rajoute ensuite dans la partition boot de la carte les fichiers "ssh" (vide) et "wpa_supplicant.conf" avec le contenu fourni. C'est dans ce dernier que l'on décrit notre identifiant utilisateur, ainsi que notre mot de passe.
 
 ### Séance 3 :
 

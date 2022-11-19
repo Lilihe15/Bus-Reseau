@@ -54,9 +54,11 @@ Le port série du Raspberry est testé en bouclage sur lui-même avec le logicie
 En ajoutant une ligne à la redéfinition de la fonction *fputc*, on peut faire en sorte que le *printf* envoie les informations à afficher vers les deux ports séries :
 *HAL_UART_Transmit(&huart5, (uint8_t \*)&ch, 1, 0xFFFF);*
 
-On forme ensuite une version simplifiée de shell pour la carte STM32, dont le code est visible [ici](stm32f4xx_it_partiel.c), afin que le Raspberry puisse lui envoyer des requêtes concernant la mesure de pression et de température.
+On forme ensuite une version simplifiée de shell pour la carte STM32, placée directement dans le vecteur d'interruption de l'UART5, dont le code est visible [ici](stm32f4xx_it_partiel.c), afin que le Raspberry puisse lui envoyer des requêtes concernant la mesure de pression et de température.
 
 ### Séance 3 :
+
+Afin de pouvoir envoyer des requêtes depuis python, on installe *Python3* ainsi que la bibliothèque *pyserial* sur la carte Raspberry.
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

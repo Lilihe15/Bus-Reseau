@@ -62,6 +62,8 @@ On forme ensuite une version simplifiée de shell pour la carte STM32, placée d
 
 #### Création du serveur sous Python
 
+*Les codes Python relatifs à cette partie se trouvent [ici](hello.py).*
+
 Afin de pouvoir envoyer des requêtes depuis python, on installe *Python3* ainsi que la bibliothèque *pyserial* et *flask* sur la carte Raspberry.
 
 On créé le fichier hello.py, qui sera à la base de l'arborescence du serveur. On lance celui-ci avec la commande *flask run* et on observe le retour de l'execution de ce script avec la commande *curl*, comme sur les figures ci-dessous.

@@ -96,11 +96,19 @@ On explore deux méthodes pour que le format soit bien du JSON.
 
 On peut simplement rajouter un argument à la méthode *json.dumps()* : *{"Content-Type": "application/json"}*.
 
-<p align="center"><img src="Sources_images/json_1.png" width="500"></p>
+<p align="center"><img src="Sources_images/json_1a.png" width="800"></p>
+
+Le résultat est conforme :
+
+<p align="center"><img src="Sources_images/json_1b.png" width="500"></p>
 
 ##### Méthode 2
 
-<p align="center"><img src="Sources_images/json_2.png" width="500"></p>
+Onn peut aussi utiliser la foncvtion *jsonify()*, qui transforme le résultat directement sous le format adéquate, comme ci-après :
+
+<p align="center"><img src="Sources_images/json_2.png" width="600"></p>
+
+Encore une fois, le retour du serveur se fait bien sous le format JSON.
 
 ### Séance 4 :
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s.

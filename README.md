@@ -1,7 +1,7 @@
 # TP de Bus et Réseaux industriels (ESE)
 ## Clarisse CHENG, Adrien LENOIR
 
-### Séance 1 :
+### TP1 :
 
 * Composant BMP280 :
 L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Il ne faut pas laisser tel quel le pin SDO, sinon l'adresse restera indéfinie. Le CSB doit être connecté à VDDIO pour selectionner la communication en $I_2C$. GND doit être connecté à VDDIO via une résistance de pull-up externe. Pour utiliser le mode lecture (-> 111011x1), il faut d'abord générer un "start" ou un "stop" en mode écriture (-> 111011x0)
@@ -45,7 +45,7 @@ En modifiant la fonction appelée par *printf*, on peut rediriger le retour des 
 
 En reprennant le code des fonctions fournies pour l'acquisition de mesures de pression et de température, et en y ajoutant les formules de compensation inclues dans la documentation du capteur, on obtient le code visible dans [BMP280_driver](BMP280_driver).
 
-### Séance 2 :
+### TP2 :
 
 On commence par télécharger le système d'exploitation "Raspberry Pi OS (32-bit) Lite" sur le carte SD à insérer dans la carte Raspberry Pi, *via* le logiciel Balena etcher. On rajoute ensuite dans la partition boot de la carte les fichiers "ssh" (vide) et "wpa_supplicant.conf" avec le contenu fourni. C'est dans ce dernier que l'on décrit notre identifiant utilisateur, ainsi que notre mot de passe. On active ensuite la connexion au GPIO et on le libère l'UART du noyau pour pouvoir s'en servir sans problème. Il nous reste plus qu'à se connecter à notre carte depuis notre ordinateur *via* le logiciel Putty.
 
@@ -58,7 +58,7 @@ En ajoutant une ligne à la redéfinition de la fonction *fputc*, on peut faire 
 
 On forme ensuite une version simplifiée de shell pour la carte STM32, placée directement dans le vecteur d'interruption de l'UART5, dont le code est visible [ici](stm32f4xx_it_partiel.c), afin que le Raspberry puisse lui envoyer des requêtes concernant la mesure de pression et de température.
 
-### Séance 3 :
+### TP3 :
 
 #### Création du serveur sous Python
 
@@ -114,7 +114,9 @@ Encore une fois, le retour du serveur se fait bien sous le format JSON.
 
 On ajoute maintenant le error handler dans le fichier [hello.py](hello.py) qui va gérer les erreurs 404.
 
-### Séance 4 :
+<p align="center"><img src="Sources_images/erreur_404.png" width="500"></p>
+
+### TP4 :
 
 L'objectif va maintenant être de faire tourner un moteur pas à pas. Comme expliqué dans la première section, nous utiliserons les broches PB8 et PB9 du STM32 pour cela.
 

@@ -120,4 +120,6 @@ L'objectif va maintenant être de faire tourner un moteur pas à pas. Comme expl
 
 Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence de communication CAN de 500 kbits/s lors de l'initialisation du périphérique dans la perspective ioc. Les broches PB8 et PB9 sont de la carte Nucleo sont configurées en CAN_Rx et CAN_Tx respectivement.
 
-Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitialiser la carte de commande car elle ne fonctionnait plus.
+Après avoir initialisé le bus CAN avec la commande *HAL_CAN_Start()* et paramétré le *pHeader*, l'envoie de d'ordres de mise en rotation se fait *via* l'appel de *HAL_CAN_AddTxMessage()*.
+
+Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitialiser la carte de commande car elle ne fonctionnait plus. Un extrait du code du fichier *main.c* est disponible [ici](main_extract.c). À chaque itération de la boucle *while*, on effectue un relevé de la température et de la pression, et on fait faire au moteur pas à pas un quart de tour à gauche ou à droite en alternance.

@@ -61,10 +61,10 @@ int main(void)
 		printf("Pression : %d Pa\n\r", (int)pressure_pa/256); // Sinon trop de chiffres significatifs
 		printf("Temperature : %d,%d °C\n\r", (int)temp_celsius/100, (int)temp_celsius%100);
 
-        		aData[1] = (aData[1]+1)%2;   //Moteur rotation 90° alternance du sens de rotation
+        	aData[1] = (aData[1]+1)%2;   //Moteur rotation 90° alternance du sens de rotation
 
-        		HAL_CAN_AddTxMessage(&hcan1, &pHeader, aData, &pTxMailbox);
+        	HAL_CAN_AddTxMessage(&hcan1, &pHeader, aData, &pTxMailbox);
 
-        		HAL_Delay(1000);
+        	HAL_Delay(1000);
 	}
 }

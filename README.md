@@ -128,7 +128,7 @@ Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitiali
 
 ### TP5 : Intégration I²C - Serial - REST - CAN
 
-Le but de cette dernière partie sera de marcher tous les composants ensemble et utiliser
+Le but de cette dernière partie sera de faire fonctionner tous les composants ensemble et utiliser
 une API REST pour recueillir les valeurs de pression et température:
 
 <p align="center"><img src="Sources_images/API_rest.PNG" width="500"></p>

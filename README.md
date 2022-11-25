@@ -4,11 +4,11 @@
 ### TP1 :
 
 * Composant BMP280 :
-L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Il ne faut pas laisser tel quel le pin SDO, sinon l'adresse restera indéfinie. Le CSB doit être connecté à VDDIO pour selectionner la communication en $I_2C$. GND doit être connecté à VDDIO via une résistance de pull-up externe. Pour utiliser le mode lecture (-> 111011x1), il faut d'abord générer un "start" ou un "stop" en mode écriture (-> 111011x0)
+L'adresse 7 bit du composant est "111011" pour les 6 premiers bits, le 7eme pouvant changer lors de l'utilisation via le port SDO. Il ne faut pas laisser tel quel le pin SDO, sinon l'adresse restera indéfinie. Le CSB doit être connecté à VDDIO pour selectionner la communication en $I^2C$. GND doit être connecté à VDDIO via une résistance de pull-up externe. Pour utiliser le mode lecture (-> 111011x1), il faut d'abord générer un "start" ou un "stop" en mode écriture (-> 111011x0)
 
 <p align="center"><img src="Sources_images/Communication_I2C.png" width="800"></p>
 
-Les timings de communication en $I_2C$ avec le capteur sont présentés dans le chronogramme suivant
+Les timings de communication en $I^2C$ avec le capteur sont présentés dans le chronogramme suivant
 
 <p align="center"><img src="Sources_images/Communication_I2C_diagram.png" width="800"></p>
 
@@ -39,7 +39,7 @@ Le pin-out du capteur est décrit ci-après :
 
 <p align="center"><img src="Sources_images/Communication_I2C_connexion_tab.png" width="600"></p>
 
-Les premiers bus dont nous auront besoin sont le bus $I_2C$ et le bus UART (on USB). Les broches PB8 et PB9 seront ici réservées pour la communication en $I_2C$ avec le capteur BMP280 (Elles seront remplacées plus tard par les broches PB6 et PB7, pour laisser la place au CAN), les broches PA2 et PA3, pour la liaison UART nous permettant d'observer les résultats attendus.
+Les premiers bus dont nous auront besoin sont le bus $I^2C$ et le bus UART (on USB). Les broches PB8 et PB9 seront ici réservées pour la communication en $I^2C$ avec le capteur BMP280 (Elles seront remplacées plus tard par les broches PB6 et PB7, pour laisser la place au CAN), les broches PA2 et PA3, pour la liaison UART nous permettant d'observer les résultats attendus.
 
 En modifiant la fonction appelée par *printf*, on peut rediriger le retour des informations *via* l'appel de cette fonction vers la console, grâce à l'USART on USB. Tout se passe, d'apparence, comme si la carte Nucleo avait pour sortie standard l'écran du PC.
 

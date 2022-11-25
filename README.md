@@ -125,3 +125,24 @@ Afin de pouvoir utiliser correctement la carte moteur, on utilise une fréquence
 Après avoir initialisé le bus CAN avec la commande *HAL_CAN_Start()* et paramétré le *pHeader*, l'envoie de d'ordres de mise en rotation se fait *via* l'appel de *HAL_CAN_AddTxMessage()*.
 
 Après de nombreux échecs de mise en rotation du moteur, il a fallu réinitialiser la carte de commande car elle ne fonctionnait plus. Un extrait du code du fichier *main.c* est disponible [ici](main_extract.c). À chaque itération de la boucle *while*, on effectue un relevé de la température et de la pression, et on fait faire au moteur pas à pas un quart de tour à gauche ou à droite en alternance.
+
+### TP5 : Intégration I²C - Serial - REST - CAN
+
+Le but de cette dernière partie sera de marcher tous les composants ensemble et utiliser
+une API REST pour recueillir les valeurs de pression et température:
+
+<p align="center"><img src="Sources_images/API_rest.PNG" width="500"></p>
+
+On modifie ainsi le fichier [hello.py](hello.py) en respectant les indications données.
+
+Nous avons écrit les fonctions permettant d'afficher la température et la pression en utilisant les décorateurs:
+
+* @app.route('/temp/', methods=['GET', 'POST']) 
+* @app.route('/pres/', methods=['GET', 'POST']) 
+
+
+## Conclusion
+
+Nous n'avons pas eu le temps de faire en sorte que tous les éléments communiquent entre eux.
+Cependant, le TP a été très formateur et nous a permis de mettre en pratique l'utilisation des protocoles
+appris en cours et aussi le fonctionnement des API REST.
